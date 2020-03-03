@@ -6,7 +6,7 @@ import { StaticQuery, Link, graphql } from "gatsby"
 
 //import "./src/styles/global.css" 
 
-import "../styles/global.css" 
+import "../styles/global.css"
 
 export default ({ children }) => (
     <StaticQuery
@@ -36,6 +36,9 @@ export default ({ children }) => (
       visibility
       ozone
     }
+    daily{
+      summary
+    }
   }
   
 }  `
@@ -47,12 +50,20 @@ export default ({ children }) => (
     </Link>
     {children}
 {/*    <Link to="/">Home </Link> */}
-    <h3><ul>
-      <li><h3>Currently Summary: {data.weatherData.currently.summary}</h3></li> 
-      <li><h3>cloudCover: {data.weatherData.currently.cloudCover}</h3></li> 
-      <li><h3>latitude: {data.weatherData.latitude}</h3></li>
-      <li><h3>longitude: {data.weatherData.longitude}</h3></li>
-    </ul></h3>  
+    <body>
+      <ul>
+      <li><h3>Location: {data.weatherData.timezone}</h3></li>
+      <li><h3>Current Conditions: {data.weatherData.currently.summary}</h3></li>
+      <li><h3>Forcast: {data.weatherData.daily.summary}</h3></li>
+      </ul>
+      
+      <ul>
+      <li><h4>Tempature: {data.weatherData.currently.temperature} Degrees F</h4></li>
+      <li><h4>Humidity: {data.weatherData.currently.humidity}</h4></li>
+      <li><h4>Wind Speed: {data.weatherData.currently.windSpeed} Mph</h4></li>
+      <li><h4>UV Index: {data.weatherData.currently.uvIndex}</h4></li>
+      <li><h4>Visibility: {data.weatherData.currently.visibility} Miles</h4></li>
+    </ul></body>  
   </div>
     )}
   />

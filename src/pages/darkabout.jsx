@@ -14,9 +14,9 @@ export const query = graphql`
 
 export default ({ data }) => (
   <Layout>
-    <h1>About {data.site.siteMetadata.title}</h1> 
+    <h1>Current Weather</h1> 
     <p>
-      Using DarkSky as the weather data source.
+      DarkSky weather data source.
     </p>
   </Layout>
 )

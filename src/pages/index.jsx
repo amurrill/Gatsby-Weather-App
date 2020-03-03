@@ -1,15 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 import Header from "../components/header"
-// import "/home/cabox/workspace/gatsby-hello-world/src/styles/global.css"
+import Icon from "../images/clear-night.png"
 
-export default () => (
-  <div /*style={{ color: `purple` }} */>
-    <Header headerText="Hello Weather!" />
-    <ul>
-    <li><Link to="/">Home</Link></li> 
-    <li><Link to="/darkabout/">DarkSky Home</Link> </li>
-    <li><Link to="/openabout/">OpenWeather Home</Link> </li>
-      </ul>
-    </div>
+export default ({data}) => (
+  <div>
+    <Header headerText="DarkSky API Weather Example!"/>
+    <ul style={{float: "right"}, {fontSize: '150%'}}>
+      <li style={{textAlign: "center"}}><Link to="/darkabout/">DarkSky Forcast</Link></li> 
+      <li style={{textAlign: "center"}}><Link to="/openabout/">OpenWeather Forcast</Link></li>
+    </ul>
+    <img src={ Icon } alt="clear-night"/>
+
+  </div>
 )
